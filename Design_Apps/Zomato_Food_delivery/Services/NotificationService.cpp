@@ -1,3 +1,6 @@
+#ifndef NOTIFICATIONSERVICE_H
+#define NOTIFICATIONSERVICE_H
+
 #include <iostream>
 #include "../Models/Order.cpp"
 using namespace std;
@@ -23,3 +26,4 @@ public:
         cout << "---------------------------------------------" << endl;
     }
 };
+#endif

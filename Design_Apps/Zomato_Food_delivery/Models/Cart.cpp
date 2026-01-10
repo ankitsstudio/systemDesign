@@ -1,3 +1,6 @@
+#ifndef CART_H
+#define CART_H
+
 #include <iostream>
 #include <vector>
 #include "MenuItem.cpp"
@@ -16,7 +19,7 @@ public:
         restaurent = nullptr;
     }
 
-    void addItem(const MenuItem item){
+    void addItem(const MenuItem &item){
         if(!restaurent){
             cout<<"No Restaurent is associated with the item.."<<endl;
         }
@@ -54,3 +57,5 @@ public:
     }
 
 };
+
+#endif

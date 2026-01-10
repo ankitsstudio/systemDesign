@@ -1,3 +1,6 @@
+#ifndef RESTAURENT_H
+#define RESTAURENT_H
+
 #include <iostream>
 #include <vector>
 
@@ -26,7 +29,7 @@ public:
     }
 
     //getters and setters
-    void setName(string& n) {
+    void setName(const string& n) {
         name = n;
     }
 
@@ -34,7 +37,7 @@ public:
         return name;
     }
 
-    void setLocation(string& l) {
+    void setLocation(const string& l) {
         location = l;
     }
 
@@ -42,7 +45,7 @@ public:
         return location;
     }
 
-    void addMenuItem(const MenuItem& item){
+    void addMenuItem(const MenuItem &item){
         items.push_back(item);
     }
 
@@ -52,3 +55,5 @@ public:
 };
 
 int Restaurent::nextRestoId = 0;
+
+#endif
