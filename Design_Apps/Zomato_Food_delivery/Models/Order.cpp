@@ -1,9 +1,13 @@
+#ifndef ORDER_H
+#define ORDER_H
+
 #include <iostream>
 #include <vector>
 
 #include "Restaurent.cpp"
 #include "User.cpp"
 #include "MenuItem.cpp"
+#include "../Strategies/PaymentStrategy.cpp"
 
 using namespace std;
 
@@ -15,6 +19,7 @@ private:
     Restaurent* restaurent;
     vector<MenuItem> items;
     double orderValue;
+    PaymentStrategy* paymentStrategy;
     string scheduled;
 
 public:
@@ -33,6 +38,17 @@ public:
     virtual string getType() const = 0;
 
     //getters and setters
+
+    bool processPayment() {
+        if (paymentStrategy) {
+            paymentStrategy->pay(orderValue);
+            return true;
+        } else {
+            cout << "Please choose a payment mode first" << endl;
+            return false;
+        }
+    } 
+
     int getOrderId() const {
         return orderId;
     }
@@ -80,6 +96,12 @@ public:
     void setTotal(int orderValue) {
         this->orderValue = orderValue;
     }
+
+    void setPaymentStrategy(PaymentStrategy* p) {
+        paymentStrategy = p;
+    }
 };
 
 int Order::nextOrderId = 0;
+
+#endif

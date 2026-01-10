@@ -1,3 +1,6 @@
+#ifndef PICKUPORDER_H
+#define PICKUPORDER_H
+
 #include <iostream>
 #include "Order.cpp"
 
@@ -8,21 +11,24 @@ private:
     string restauretAddress;
 
 public:
-    PickUpOrder(string& da){
+    PickUpOrder() {}
+    PickUpOrder(const string& da){
         restauretAddress = "";
     }
 
     string getType() const override {
-        return "Delivery";
+        return "Pickup";
     }
 
     // getters and setters
 
-    void setDeliveryAddress(string& ra) {
+    void setPickupAddress(const string& ra) {
         restauretAddress = ra;
     }
 
-    string getDeliveryAddress() const {
+    string getPickupAddress() const {
         return restauretAddress;
     }
 };
+
+#endif

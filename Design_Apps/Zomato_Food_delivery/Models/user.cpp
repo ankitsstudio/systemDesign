@@ -1,3 +1,6 @@
+#ifndef USER_H
+#define USER_H
+
 #include<iostream>
 #include "Cart.cpp"
 
@@ -12,7 +15,7 @@ private:
 
 public:
     // user constructer
-    User(int userId, string& name, string& address) {
+    User(int userId, const string& name, const string& address) {
         this->name = name;
         this->userId = userId;
         this->address = address;
@@ -35,6 +38,7 @@ public:
     string getAddress() const{
         return address;
     }
+    
     void setAddress(const string& a){
         address = a;
     }
@@ -43,3 +47,5 @@ public:
         return cart;
     }
 };
+
+#endif

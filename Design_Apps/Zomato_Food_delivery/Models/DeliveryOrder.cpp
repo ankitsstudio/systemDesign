@@ -1,3 +1,6 @@
+#ifndef DELIVERYORDER_H
+#define DELIVERYORDER_H
+
 #include <iostream>
 #include "Order.cpp"
 
@@ -8,7 +11,8 @@ private:
     string deliverAddress;
 
 public:
-    DeliveryOrder(string& da){
+    DeliveryOrder() {};
+    DeliveryOrder(const string& da){
         deliverAddress = "";
     }
 
@@ -18,7 +22,7 @@ public:
 
     // getters and setters
 
-    void setDeliveryAddress(string& da) {
+    void setDeliveryAddress(const string& da) {
         deliverAddress = da;
     }
 
@@ -26,3 +30,5 @@ public:
         return deliverAddress;
     }
 };
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef MENUITEM_H
+#define MENUITEM_H
+
 #include<iostream>
 
 using namespace std;
@@ -9,14 +12,14 @@ private:
     double price;
 
 public: 
-    MenuItem(string& code, string& name, double price){
+    MenuItem(const string& code, const string& name, double price){
         this->code = code;
         this->name = name;
         this->price = price;
     }
 
     // getters and setters
-    void setItemCode(string& c) {
+    void setItemCode(const string& c) {
         code = c;
     }
 
@@ -24,7 +27,7 @@ public:
         return code;
     }
 
-    void setItemName(string& n) {
+    void setItemName(const string& n) {
         name = n;
     }
 
@@ -40,3 +43,5 @@ public:
         return price;
     }
 };
+
+#endif
